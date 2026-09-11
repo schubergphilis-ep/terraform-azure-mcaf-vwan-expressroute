@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.0](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/compare/v0.3.0...v0.4.0) (2026-09-11)
+
+
+### 🚀 Features
+
+* apply the routing configuration to the ExpressRoute connection ([ac42c25](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/commit/ac42c259735b022e020f37d29c168cc5e46708e6))
+
+
+### 🐛 Fixes
+
+* apply the routing configuration to the ExpressRoute connection ([#2](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/issues/2)) ([ac42c25](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/commit/ac42c259735b022e020f37d29c168cc5e46708e6))
+
 ## [0.3.0](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/compare/v0.2.2...v0.3.0) (2026-05-11)
 
 
@@ -44,4 +56,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🚀 Features
 
 * first release express route module ([#2](https://github.com/schubergphilis/terraform-azure-mcaf-vwan-expressroute/pull/2)) ([69334dc](https://github.com/schubergphilis-ep/terraform-azure-mcaf-vwan-expressroute/commit/69334dc38a970c2e344560bd0b1431570cafbbd3))
-
