@@ -59,5 +59,24 @@ resource "azurerm_express_route_connection" "this" {
   express_route_circuit_peering_id = coalesce(length(azurerm_express_route_circuit_peering.this) > 0 ? azurerm_express_route_circuit_peering.this[0].id : null, var.express_route_gateway_connection.express_route_circuit_peering_id)
   authorization_key                = var.express_route_gateway_connection.authorization_key
   routing_weight                   = var.express_route_gateway_connection.routing_weight
+
+  dynamic "routing" {
+    for_each = var.express_route_gateway_connection.routing != null ? [var.express_route_gateway_connection.routing] : []
+
+    content {
+      associated_route_table_id = routing.value.associated_route_table_id
+      inbound_route_map_id      = routing.value.inbound_route_map_id
+      outbound_route_map_id     = routing.value.outbound_route_map_id
+
+      dynamic "propagated_route_table" {
+        for_each = routing.value.propagated_route_table != null ? [routing.value.propagated_route_table] : []
+
+        content {
+          labels          = propagated_route_table.value.labels
+          route_table_ids = propagated_route_table.value.route_table_ids
+        }
+      }
+    }
+  }
 }
 
